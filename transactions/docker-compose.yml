@@ -1,0 +1,13 @@
+version: '3'
+services:
+  database:
+    image: postgres # use latest official postgres version
+    ports:
+      - 5961:5432
+    environment:
+      - POSTGRES_USER=test
+      - POSTGRES_PASSWORD=example
+    volumes:
+      - pgdata:/var/lib/postgresql/data/ # persist data even if container shuts down
+volumes:
+  pgdata: # named volumes can be managed easier using docker-compose
