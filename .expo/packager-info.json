@@ -1,0 +1,10 @@
+{
+  "devToolsPort": 19002,
+  "expoServerPort": 19000,
+  "packagerPort": 19001,
+  "packagerPid": 45867,
+  "expoServerNgrokUrl": "https://38-2fk.anonymous.paymentsplit.exp.direct",
+  "packagerNgrokUrl": "https://packager.38-2fk.anonymous.paymentsplit.exp.direct",
+  "ngrokPid": 45884,
+  "webpackServerPort": null
+}

@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import axios from 'axios';
+
 import {
   Alert,
   ActivityIndicator,
@@ -12,7 +14,7 @@ import { theme } from "../constants";
 
 export default class SignUp extends Component {
   state = {
-    email: null,
+    phone: null,
     username: null,
     password: null,
     errors: [],
@@ -21,18 +23,27 @@ export default class SignUp extends Component {
 
   handleSignUp() {
     const { navigation } = this.props;
-    const { email, username, password } = this.state;
+    const { phone, username, password } = this.state;
     const errors = [];
 
     Keyboard.dismiss();
     this.setState({ loading: true });
 
     // check with backend API or with some static data
-    if (!email) errors.push("email");
+    if (!phone) errors.push("phone");
     if (!username) errors.push("username");
     if (!password) errors.push("password");
 
     this.setState({ errors, loading: false });
+
+    axios.post(`http://10.0.0.63:8080/users`, { 
+      "name": this.state.username,
+      "password": this.state.password,
+      "phone": this.state.phone })
+      .then(res => {
+        console.log(res);
+        console.log(res.data);
+      });
 
     if (!errors.length) {
       Alert.alert(
@@ -42,7 +53,7 @@ export default class SignUp extends Component {
           {
             text: "Continue",
             onPress: () => {
-              navigation.navigate("Dashboard");
+              navigation.navigate("Plaid");
             }
           }
         ],
@@ -64,12 +75,11 @@ export default class SignUp extends Component {
           </Text>
           <Block middle>
             <Input
-              email
-              label="Email"
-              error={hasErrors("email")}
-              style={[styles.input, hasErrors("email")]}
-              defaultValue={this.state.email}
-              onChangeText={text => this.setState({ email: text })}
+              label="Phone Number"
+              error={hasErrors("phone")}
+              style={[styles.input, hasErrors("phone")]}
+              defaultValue={this.state.phone}
+              onChangeText={text => this.setState({ phone: text })}
             />
             <Input
               label="Username"

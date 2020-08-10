@@ -8,18 +8,25 @@
   },
   "dependencies": {
     "@expo/vector-icons": "^10.0.6",
+    "axios": "^0.19.2",
+    "body-parser": "^1.19.0",
     "expo": "^36.0.0",
     "expo-asset": "~8.0.0",
     "expo-linear-gradient": "~8.0.0",
+    "expo-ui-kit": "^0.1.6",
+    "express": "^4.17.1",
+    "plaid": "^7.0.0",
     "react": "16.9.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-36.0.1.tar.gz",
     "react-native-gesture-handler": "^1.5.3",
+    "react-native-plaid-link": "^1.4.4",
+    "react-native-plaid-link-sdk": "^5.0.0",
+    "react-native-screens": "^2.0.0-beta.7",
     "react-native-slider": "^0.11.0",
     "react-native-vector-icons": "^6.6.0",
+    "react-native-webview": "^10.4.0",
     "react-navigation": "^4.0.10",
-    "react-navigation-stack": "^1.9.3",
-    "react-native-screens": "^2.0.0-beta.7",
-    "expo-ui-kit": "^0.1.6"
+    "react-navigation-stack": "^1.9.3"
   },
   "devDependencies": {
     "babel-preset-expo": "^8.0.0"

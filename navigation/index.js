@@ -8,6 +8,7 @@ import Login from "../screens/Login";
 import SignUp from "../screens/SignUp";
 import Dashboard from "../screens/Dashboard";
 import Settings from "../screens/Settings";
+import Plaid from "../screens/Plaid";
 
 import { theme } from "../constants";
 
@@ -17,7 +18,8 @@ const screens = createStackNavigator(
     Login,
     SignUp,
     Settings,
-    Dashboard
+    Dashboard,
+    Plaid
   },
   {
     defaultNavigationOptions: {

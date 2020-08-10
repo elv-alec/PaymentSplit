@@ -9,32 +9,39 @@ import {
 import { Button, Block, Input, Text } from "../components";
 import { theme } from "../constants";
 
-const VALID_EMAIL = "danish-gets-no-pussy@gmail.com";
-const VALID_PASSWORD = "helloworld";
-
 export default class Login extends Component {
   state = {
-    email: VALID_EMAIL,
-    password: VALID_PASSWORD,
+    username: null,
+    password: null,
     errors: [],
     loading: false
   };
 
   handleLogin() {
     const { navigation } = this.props;
-    const { email, password } = this.state;
+    const { username, password } = this.state;
     const errors = [];
 
     Keyboard.dismiss();
     this.setState({ loading: true });
 
     // check with backend API or with some static data
-    if (email !== VALID_EMAIL) {
-      errors.push("email");
-    }
-    if (password !== VALID_PASSWORD) {
-      errors.push("password");
-    }
+    // if (email !== VALID_EMAIL) {
+    //   errors.push("email");
+    // }
+
+    // if (password !== VALID_PASSWORD) {
+    //   errors.push("password");
+    // }
+
+    // axios.get(`http://10.0.0.63:8080/users`, { 
+    //   "name": username,
+    //   "password": password})
+    //   .then(res => {
+    //     console.log("axios get request:");
+    //     console.log(res);
+    //     console.log(res.data);
+    //   });
 
     this.setState({ errors, loading: false });
 
@@ -56,11 +63,11 @@ export default class Login extends Component {
           </Text>
           <Block middle>
             <Input
-              label="Email"
-              error={hasErrors("email")}
-              style={[styles.input, hasErrors("email")]}
-              defaultValue={this.state.email}
-              onChangeText={text => this.setState({ email: text })}
+              label="Username"
+              error={hasErrors("username")}
+              style={[styles.input, hasErrors("username")]}
+              defaultValue={this.state.username}
+              onChangeText={text => this.setState({ username: text })}
             />
             <Input
               secure
